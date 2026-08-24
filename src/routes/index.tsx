@@ -7,7 +7,19 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  Github,
+  MessageCircle,
+  Send,
+  X,
+  Globe,
+  LineChart,
+  Trophy,
+  UtensilsCrossed,
+  Sparkles,
+} from "lucide-react";
 import portrait from "@/assets/marziyeh.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -42,10 +54,10 @@ const services = [
 ];
 
 const work = [
-  { label: "TradeMesh", url: "https://app.trademesh.com" },
-  { label: "MoneyTribe21 Leaderboard", url: "https://leaderboard.moneytribe21.com" },
-  { label: "We Are OI", url: "https://www.weareoi.com/" },
-  { label: "Yuzu Omakase", url: "https://www.yuzuomakase.com/" },
+  { label: "TradeMesh", url: "https://app.trademesh.com", icon: LineChart },
+  { label: "MoneyTribe21 Leaderboard", url: "https://leaderboard.moneytribe21.com", icon: Trophy },
+  { label: "We Are OI", url: "https://www.weareoi.com/", icon: Globe },
+  { label: "Yuzu Omakase", url: "https://www.yuzuomakase.com/", icon: UtensilsCrossed },
 ];
 
 const contacts = [
@@ -66,103 +78,124 @@ function Index() {
 
   return (
     <main
-      className="min-h-screen w-full px-5 py-10 sm:py-16"
+      className="min-h-screen w-full px-4 py-6 sm:py-10"
       style={{ background: "var(--gradient-hero)" }}
     >
-      <div className="mx-auto w-full max-w-xl">
-        <section className="overflow-hidden rounded-lg border border-border bg-card/70 backdrop-blur-sm">
-          <div className="flex items-center gap-4 border-b border-border p-5 sm:p-7">
-            <img
-              src={portrait.url}
-              alt="Portrait of Marziyeh Lak"
-              className="h-20 w-20 shrink-0 rounded-md object-cover ring-1 ring-accent/60 sm:h-24 sm:w-24"
-              loading="eager"
-            />
-            <div>
-              <h1 className="font-display text-2xl leading-tight tracking-tight sm:text-3xl">
-                Marziyeh Lak
-              </h1>
-              <p className="mt-1 text-xs uppercase tracking-[0.22em] text-accent sm:text-sm">
-                Senior AI &amp; Full-Stack Engineer
-              </p>
-            </div>
-          </div>
+      <div className="mx-auto w-full max-w-md">
+        <img
+          src={portrait.url}
+          alt="Portrait of Marziyeh Lak"
+          className="aspect-[4/5] w-full rounded-3xl object-cover"
+          loading="eager"
+        />
 
-          <div className="p-5 sm:p-7">
-            <h2 className="text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
-              My services
-            </h2>
-            <ul className="mt-3 grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2">
-              {services.map((s, i) => (
-                <li key={s} className="flex items-baseline gap-2 text-sm">
-                  <span className="font-display text-xs text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span>{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="-mt-10 flex flex-col items-center text-center">
+          <img
+            src={portrait.url}
+            alt=""
+            aria-hidden="true"
+            className="h-20 w-20 rounded-full border-4 border-primary object-cover"
+          />
+          <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-primary">
+            Marziyeh Lak
+          </h1>
+          <p className="mt-1 text-sm font-semibold text-muted-foreground">
+            Senior AI &amp; Full-Stack Engineer
+          </p>
+        </div>
 
-          <div className="border-t border-border p-5 sm:p-7">
-            <h2 className="text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
-              Some of my work
-            </h2>
-            <ul className="mt-3 space-y-2">
-              {work.map((w) => (
-                <li key={w.url}>
-                  <a
-                    href={w.url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="group flex items-center justify-between rounded-md border border-border px-4 py-3 text-sm transition-colors hover:border-accent hover:bg-secondary"
-                  >
-                    <span>{w.label}</span>
-                    <ArrowUpRight className="h-4 w-4 text-accent transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="border-t border-border p-5 sm:p-7">
-            <p className="text-sm text-muted-foreground">
-              Write a full description of your project — I&apos;ll review it and send you a timeline
-              and budget.
-            </p>
-            <button
-              onClick={() => setOpen(true)}
-              className="mt-4 w-full rounded-md bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-transform hover:scale-[1.01]"
-              style={{ boxShadow: "var(--shadow-glow)" }}
-            >
-              Get in touch
-            </button>
-          </div>
+        <section className="mt-6">
+          <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.25em] text-muted-foreground">
+            My services
+          </h2>
+          <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {services.map((s, i) => (
+              <li
+                key={s}
+                className="flex items-center gap-2 rounded-2xl bg-card px-4 py-3 text-sm font-semibold text-primary"
+              >
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-[0.65rem] font-bold text-primary-foreground">
+                  {i + 1}
+                </span>
+                <span className="min-w-0">{s}</span>
+              </li>
+            ))}
+          </ul>
         </section>
 
-        <p className="mt-6 text-center text-xs text-muted-foreground">
+        <section className="mt-6">
+          <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.25em] text-muted-foreground">
+            Some of my work
+          </h2>
+          <ul className="mt-3 space-y-3">
+            {work.map((w, i) => (
+              <li key={w.url}>
+                <a
+                  href={w.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={`group flex items-center gap-3 rounded-2xl px-4 py-4 transition-transform hover:scale-[1.01] ${
+                    i % 2 === 0
+                      ? "bg-secondary text-secondary-foreground"
+                      : "bg-primary text-primary-foreground"
+                  }`}
+                  style={{ boxShadow: "var(--shadow-glow)" }}
+                >
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-foreground text-background">
+                    <w.icon className="h-4 w-4" />
+                  </span>
+                  <span className="min-w-0 flex-1 truncate text-base font-extrabold">
+                    {w.label}
+                  </span>
+                  <ArrowUpRight className="h-5 w-5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-6 rounded-2xl bg-card p-5 text-center">
+          <p className="text-sm font-medium text-muted-foreground">
+            Write a full description of your project — I&apos;ll review it and send you a timeline
+            and budget.
+          </p>
+          <button
+            onClick={() => setOpen(true)}
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-5 py-4 text-sm font-extrabold uppercase tracking-[0.2em] text-primary-foreground transition-transform hover:scale-[1.01]"
+            style={{ boxShadow: "var(--shadow-glow)" }}
+          >
+            <Sparkles className="h-4 w-4" />
+            Get in touch
+          </button>
+        </section>
+
+        <p className="mt-6 text-center text-xs font-semibold text-muted-foreground">
           © {new Date().getFullYear()} Marziyeh Lak
         </p>
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-sm border-border bg-popover">
+        <DialogContent className="max-w-sm rounded-3xl border-border bg-popover">
           <DialogHeader>
-            <DialogTitle className="font-display text-xl">Get in touch</DialogTitle>
+            <DialogTitle className="font-display text-xl text-primary">Get in touch</DialogTitle>
             <DialogDescription>Pick a channel — it opens directly.</DialogDescription>
           </DialogHeader>
           <ul className="space-y-2">
-            {contacts.map((c) => (
+            {contacts.map((c, i) => (
               <li key={c.label}>
                 <a
                   href={c.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="flex items-center gap-3 rounded-md border border-border px-4 py-3 text-sm transition-colors hover:border-accent hover:bg-secondary"
+                  className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-bold ${
+                    i % 2 === 0
+                      ? "bg-secondary text-secondary-foreground"
+                      : "bg-primary text-primary-foreground"
+                  }`}
                 >
-                  <c.icon className="h-4 w-4 text-accent" />
-                  <span className="flex-1">{c.value}</span>
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground">
+                  <c.icon className="h-4 w-4 shrink-0" />
+                  <span className="min-w-0 flex-1 truncate">{c.value}</span>
+                  <span className="shrink-0 text-[0.65rem] uppercase tracking-widest opacity-80">
                     {c.label}
                   </span>
                 </a>

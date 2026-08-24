@@ -7,19 +7,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import {
-  ArrowUpRight,
-  Mail,
-  Github,
-  MessageCircle,
-  Send,
-  X,
-  Globe,
-  LineChart,
-  Trophy,
-  UtensilsCrossed,
-  Sparkles,
-} from "lucide-react";
+import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
 import portrait from "@/assets/marziyeh.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -54,10 +42,10 @@ const services = [
 ];
 
 const work = [
-  { label: "TradeMesh", url: "https://app.trademesh.com", icon: LineChart },
-  { label: "MoneyTribe21 Leaderboard", url: "https://leaderboard.moneytribe21.com", icon: Trophy },
-  { label: "We Are OI", url: "https://www.weareoi.com/", icon: Globe },
-  { label: "Yuzu Omakase", url: "https://www.yuzuomakase.com/", icon: UtensilsCrossed },
+  { label: "TradeMesh", url: "https://app.trademesh.com" },
+  { label: "MoneyTribe21 Leaderboard", url: "https://leaderboard.moneytribe21.com" },
+  { label: "We Are OI", url: "https://www.weareoi.com/" },
+  { label: "Yuzu Omakase", url: "https://www.yuzuomakase.com/" },
 ];
 
 const contacts = [
@@ -77,125 +65,144 @@ function Index() {
   const [open, setOpen] = useState(false);
 
   return (
-    <main
-      className="min-h-screen w-full px-4 py-6 sm:py-10"
-      style={{ background: "var(--gradient-hero)" }}
-    >
-      <div className="mx-auto w-full max-w-md">
-        <img
-          src={portrait.url}
-          alt="Portrait of Marziyeh Lak"
-          className="aspect-[4/5] w-full rounded-3xl object-cover"
-          loading="eager"
-        />
-
-        <div className="-mt-10 flex flex-col items-center text-center">
+    <main className="min-h-screen w-full bg-background">
+      <div className="mx-auto w-full max-w-3xl border-x-2 border-foreground">
+        {/* Header bar */}
+        <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b-2 border-foreground bg-primary px-5 py-4">
+          <div className="min-w-0">
+            <p className="truncate font-display text-lg uppercase leading-none tracking-tight text-primary-foreground sm:text-xl">
+              Marziyeh Lak
+            </p>
+            <p className="mt-1 truncate text-xs font-semibold text-primary-foreground/70">
+              Senior AI &amp; Full-Stack Engineer
+            </p>
+          </div>
           <img
             src={portrait.url}
-            alt=""
-            aria-hidden="true"
-            className="h-20 w-20 rounded-full border-4 border-primary object-cover"
+            alt="Portrait of Marziyeh Lak"
+            className="h-12 w-12 shrink-0 rounded-full border-2 border-primary-foreground object-cover"
           />
-          <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-primary">
-            Marziyeh Lak
-          </h1>
-          <p className="mt-1 text-sm font-semibold text-muted-foreground">
-            Senior AI &amp; Full-Stack Engineer
-          </p>
-        </div>
+        </header>
 
-        <section className="mt-6">
-          <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.25em] text-muted-foreground">
-            My services
+        {/* CTA strip */}
+        <button
+          onClick={() => setOpen(true)}
+          className="block w-full border-b-2 border-foreground bg-secondary px-5 py-4 text-center font-display text-xl uppercase tracking-tight text-secondary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          Get in touch
+        </button>
+
+        {/* Hero */}
+        <section className="px-5 py-10 sm:py-14">
+          <h1 className="font-display text-[2.6rem] uppercase leading-[0.92] tracking-tight text-foreground sm:text-6xl">
+            Building AI
+            <br />
+            <span className="relative inline-block">
+              <span className="absolute inset-x-0 bottom-1 h-3 bg-accent/70" aria-hidden="true" />
+              <span className="relative">& Software</span>
+            </span>
+            <br />
+            That Ships
+          </h1>
+          <p className="mt-5 max-w-md text-base font-medium text-muted-foreground">
+            Senior engineer designing and shipping AI automation, ERP and product platforms
+            end-to-end.
+          </p>
+          <div className="mt-6 border-2 border-foreground">
+            <img
+              src={portrait.url}
+              alt="Marziyeh Lak at work"
+              className="aspect-[4/3] w-full object-cover"
+              loading="eager"
+            />
+          </div>
+        </section>
+
+        {/* Services */}
+        <section className="border-y-2 border-foreground bg-primary px-5 py-10">
+          <h2 className="font-display text-3xl uppercase tracking-tight text-primary-foreground sm:text-4xl">
+            Services
           </h2>
-          <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2">
             {services.map((s, i) => (
               <li
                 key={s}
-                className="flex items-center gap-2 rounded-2xl bg-card px-4 py-3 text-sm font-semibold text-primary"
+                className="flex items-baseline gap-3 border-t border-primary-foreground/25 py-3"
               >
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-[0.65rem] font-bold text-primary-foreground">
-                  {i + 1}
+                <span className="shrink-0 font-display text-sm text-accent">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="min-w-0">{s}</span>
+                <span className="min-w-0 text-base font-semibold text-primary-foreground">{s}</span>
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="mt-6">
-          <h2 className="px-1 text-xs font-extrabold uppercase tracking-[0.25em] text-muted-foreground">
-            Some of my work
+        {/* Work */}
+        <section className="px-5 py-10">
+          <h2 className="font-display text-3xl uppercase tracking-tight text-foreground sm:text-4xl">
+            Selected Work
           </h2>
-          <ul className="mt-3 space-y-3">
-            {work.map((w, i) => (
+          <ul className="mt-6">
+            {work.map((w) => (
               <li key={w.url}>
                 <a
                   href={w.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className={`group flex items-center gap-3 rounded-2xl px-4 py-4 transition-transform hover:scale-[1.01] ${
-                    i % 2 === 0
-                      ? "bg-secondary text-secondary-foreground"
-                      : "bg-primary text-primary-foreground"
-                  }`}
-                  style={{ boxShadow: "var(--shadow-glow)" }}
+                  className="group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t-2 border-foreground py-4 transition-colors hover:bg-primary hover:px-3 hover:text-primary-foreground"
                 >
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-foreground text-background">
-                    <w.icon className="h-4 w-4" />
-                  </span>
-                  <span className="min-w-0 flex-1 truncate text-base font-extrabold">
+                  <span className="min-w-0 truncate font-display text-lg uppercase tracking-tight sm:text-2xl">
                     {w.label}
                   </span>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight className="h-6 w-6 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
                 </a>
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="mt-6 rounded-2xl bg-card p-5 text-center">
-          <p className="text-sm font-medium text-muted-foreground">
-            Write a full description of your project — I&apos;ll review it and send you a timeline
-            and budget.
+        {/* Brief */}
+        <section className="border-t-2 border-foreground bg-accent px-5 py-10 text-center">
+          <p className="mx-auto max-w-md font-display text-xl uppercase leading-tight tracking-tight text-accent-foreground sm:text-2xl">
+            Write full details of your project — I&apos;ll review it and send a timeline and budget.
           </p>
           <button
             onClick={() => setOpen(true)}
-            className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-primary px-5 py-4 text-sm font-extrabold uppercase tracking-[0.2em] text-primary-foreground transition-transform hover:scale-[1.01]"
+            className="mt-6 inline-flex items-center gap-2 border-2 border-foreground bg-secondary px-8 py-4 font-display text-sm uppercase tracking-[0.15em] text-secondary-foreground transition-transform hover:-translate-y-0.5"
             style={{ boxShadow: "var(--shadow-glow)" }}
           >
-            <Sparkles className="h-4 w-4" />
             Get in touch
           </button>
         </section>
 
-        <p className="mt-6 text-center text-xs font-semibold text-muted-foreground">
+        <footer className="border-t-2 border-foreground bg-primary px-5 py-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">
           © {new Date().getFullYear()} Marziyeh Lak
-        </p>
+        </footer>
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-sm rounded-3xl border-border bg-popover">
+        <DialogContent className="max-w-sm rounded-none border-2 border-foreground bg-popover">
           <DialogHeader>
-            <DialogTitle className="font-display text-xl text-primary">Get in touch</DialogTitle>
-            <DialogDescription>Pick a channel — it opens directly.</DialogDescription>
+            <DialogTitle className="font-display text-xl uppercase tracking-tight text-popover-foreground">
+              Get in touch
+            </DialogTitle>
+            <DialogDescription className="text-popover-foreground/70">
+              Pick a channel — it opens directly.
+            </DialogDescription>
           </DialogHeader>
-          <ul className="space-y-2">
-            {contacts.map((c, i) => (
+          <ul>
+            {contacts.map((c) => (
               <li key={c.label}>
                 <a
                   href={c.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-bold ${
-                    i % 2 === 0
-                      ? "bg-secondary text-secondary-foreground"
-                      : "bg-primary text-primary-foreground"
-                  }`}
+                  className="flex items-center gap-3 border-t border-popover-foreground/25 py-3 text-sm font-bold text-popover-foreground transition-colors hover:text-accent"
                 >
                   <c.icon className="h-4 w-4 shrink-0" />
                   <span className="min-w-0 flex-1 truncate">{c.value}</span>
-                  <span className="shrink-0 text-[0.65rem] uppercase tracking-widest opacity-80">
+                  <span className="shrink-0 text-[0.65rem] uppercase tracking-widest opacity-60">
                     {c.label}
                   </span>
                 </a>

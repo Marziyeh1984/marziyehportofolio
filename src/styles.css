@@ -145,5 +145,10 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
   }
 }

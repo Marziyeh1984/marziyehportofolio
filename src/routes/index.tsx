@@ -152,7 +152,7 @@ function Index() {
                   rel="noreferrer noopener"
                   className="group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t-2 border-foreground py-4 transition-colors hover:bg-primary hover:px-3 hover:text-primary-foreground"
                 >
-                  <span className="min-w-0 truncate font-display text-lg uppercase tracking-tight sm:text-2xl">
+                  <span className="min-w-0 break-words font-display text-lg uppercase leading-tight tracking-tight sm:text-2xl">
                     {w.label}
                   </span>
                   <ArrowUpRight className="h-6 w-6 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />

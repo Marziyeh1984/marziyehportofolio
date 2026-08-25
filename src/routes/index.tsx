@@ -8,7 +8,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
-import portrait from "@/assets/marziyeh.png.asset.json";
+import portrait from "@/assets/marziyeh-bw.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -108,11 +108,11 @@ function Index() {
             Senior engineer designing and shipping AI automation, ERP and product platforms
             end-to-end.
           </p>
-          <div className="mt-6 border-2 border-foreground">
+          <div className="mt-6 border-2 border-foreground bg-muted">
             <img
               src={portrait.url}
-              alt="Marziyeh Lak at work"
-              className="aspect-[4/3] w-full object-cover"
+              alt="Black and white portrait of Marziyeh Lak"
+              className="aspect-square w-full object-contain object-bottom"
               loading="eager"
             />
           </div>

@@ -8,7 +8,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
-import portrait from "@/assets/marziyeh-bw.png.asset.json";
+import portrait from "@/assets/marziyeh-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -112,7 +112,7 @@ function Index() {
             <img
               src={portrait.url}
               alt="Black and white portrait of Marziyeh Lak"
-              className="aspect-square w-full object-contain object-bottom"
+              className="aspect-square w-full object-cover object-top"
               loading="eager"
             />
           </div>

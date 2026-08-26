@@ -63,6 +63,7 @@ const contacts = [
 
 function Index() {
   const [open, setOpen] = useState(false);
+  const [projectOpen, setProjectOpen] = useState(false);
   const [name, setName] = useState("");
   const [details, setDetails] = useState("");
   const [sent, setSent] = useState(false);

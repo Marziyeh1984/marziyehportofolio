@@ -190,7 +190,10 @@ function Index() {
             Write full details of your project — I&apos;ll review it and send a timeline and budget.
           </p>
           <button
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setSent(false);
+              setProjectOpen(true);
+            }}
             className="mt-6 inline-flex items-center gap-2 border-2 border-foreground bg-secondary px-8 py-4 font-display text-sm uppercase tracking-[0.15em] text-secondary-foreground transition-transform hover:-translate-y-0.5"
             style={{ boxShadow: "var(--shadow-glow)" }}
           >

@@ -123,16 +123,16 @@ function Index() {
           <h2 className="font-display text-3xl uppercase tracking-tight text-primary-foreground sm:text-4xl">
             Services
           </h2>
-          <ul className="mt-6 space-y-3">
+          <ul className="mt-6">
             {services.map((s, i) => (
               <li
                 key={s}
-                className="flex items-center gap-4 border-2 border-primary-foreground bg-background p-3 text-foreground"
+                className="flex items-center gap-4 border-t-2 border-primary-foreground py-3 text-primary-foreground first:border-t-0"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-foreground bg-muted font-display text-sm text-foreground">
+                <span className="font-display text-sm font-bold opacity-60">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="text-sm font-bold uppercase leading-tight tracking-tight">
+                <span className="font-display text-base uppercase tracking-tight text-primary-foreground">
                   {s}
                 </span>
               </li>

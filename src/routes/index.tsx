@@ -63,6 +63,26 @@ const contacts = [
 
 function Index() {
   const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [details, setDetails] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const message = () =>
+    `New project request%0A%0AName: ${encodeURIComponent(name)}%0A%0AProject details:%0A${encodeURIComponent(details)}`;
+
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !details.trim()) return;
+    const m = message();
+    window.open(`https://wa.me/989101836737?text=${m}`, "_blank", "noopener");
+    window.open(
+      `mailto:lak20ml@gmail.com?subject=${encodeURIComponent("New project request from " + name)}&body=${m}`,
+      "_blank",
+      "noopener",
+    );
+    window.open("https://t.me/lak_202", "_blank", "noopener");
+    setSent(true);
+  };
 
   return (
     <main className="min-h-screen w-full bg-background">

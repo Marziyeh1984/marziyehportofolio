@@ -8,7 +8,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
-import portrait from "@/assets/marziyeh-portrait.jpg.asset.json";
+import portrait from "@/assets/marziyeh-portrait.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({

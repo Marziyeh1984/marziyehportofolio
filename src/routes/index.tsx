@@ -123,24 +123,21 @@ function Index() {
           <h2 className="font-display text-3xl uppercase tracking-tight text-primary-foreground sm:text-4xl">
             Services
           </h2>
-          <div className="scrollbar-hide -mx-5 mt-6 overflow-x-auto px-5">
-            <ul className="flex snap-x snap-mandatory gap-3">
-              {services.map((s, i) => (
-                <li
-                  key={s}
-                  className="flex w-[72vw] max-w-[260px] shrink-0 snap-start flex-col justify-between border-2 border-primary-foreground bg-background p-4 text-foreground sm:w-[40vw]"
-                  style={{ boxShadow: "4px 4px 0 0 var(--foreground)" }}
-                >
-                  <span className="font-display text-4xl leading-none text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="mt-6 text-sm font-bold uppercase leading-tight tracking-tight">
-                    {s}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="mt-6 space-y-3">
+            {services.map((s, i) => (
+              <li
+                key={s}
+                className="flex items-center gap-4 border-2 border-primary-foreground bg-background p-3 text-foreground"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-foreground bg-muted font-display text-sm text-foreground">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-sm font-bold uppercase leading-tight tracking-tight">
+                  {s}
+                </span>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* Work */}

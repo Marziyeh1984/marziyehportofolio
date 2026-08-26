@@ -237,6 +237,81 @@ function Index() {
           </ul>
         </DialogContent>
       </Dialog>
+
+      <Dialog open={projectOpen} onOpenChange={setProjectOpen}>
+        <DialogContent className="max-w-sm rounded-none border-2 border-foreground bg-popover">
+          <DialogHeader>
+            <DialogTitle className="font-display text-2xl uppercase tracking-tight text-accent">
+              Start your project
+            </DialogTitle>
+            <DialogDescription className="text-popover-foreground/70">
+              Write the full details of your project — I&apos;ll check it and give you a
+              timeline and budget.
+            </DialogDescription>
+          </DialogHeader>
+          {sent ? (
+            <div className="space-y-3">
+              <p className="border-2 border-secondary bg-secondary/10 px-4 py-3 text-sm font-bold text-popover-foreground">
+                Almost done — WhatsApp, Email and Telegram were opened. Just press send in
+                each app.
+              </p>
+              <a
+                href={`https://wa.me/989101836737?text=${message()}`}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="block border-2 border-foreground bg-secondary px-4 py-3 text-center font-display text-sm uppercase tracking-[0.15em] text-secondary-foreground"
+              >
+                Resend via WhatsApp
+              </a>
+            </div>
+          ) : (
+            <form onSubmit={submit} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="mb-1.5 block text-xs font-bold uppercase tracking-[0.15em] text-popover-foreground/70"
+                >
+                  Your name
+                </label>
+                <input
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Jane Doe"
+                  maxLength={100}
+                  required
+                  className="w-full border-2 border-foreground/60 bg-transparent px-4 py-3 text-sm font-bold text-popover-foreground placeholder:text-popover-foreground/40 focus:border-secondary focus:outline-none"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="details"
+                  className="mb-1.5 block text-xs font-bold uppercase tracking-[0.15em] text-popover-foreground/70"
+                >
+                  Project details
+                </label>
+                <textarea
+                  id="details"
+                  value={details}
+                  onChange={(e) => setDetails(e.target.value)}
+                  placeholder="What are you building? Goals, features, deadline…"
+                  maxLength={2000}
+                  required
+                  rows={5}
+                  className="w-full resize-none border-2 border-foreground/60 bg-transparent px-4 py-3 text-sm font-bold text-popover-foreground placeholder:text-popover-foreground/40 focus:border-secondary focus:outline-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="flex w-full items-center justify-center gap-2 border-2 border-foreground bg-secondary px-8 py-4 font-display text-base uppercase tracking-[0.15em] text-secondary-foreground transition-transform hover:-translate-y-0.5"
+                style={{ boxShadow: "var(--shadow-glow)" }}
+              >
+                Send it <Send className="h-4 w-4" />
+              </button>
+            </form>
+          )}
+        </DialogContent>
+      </Dialog>
     </main>
   );
 }

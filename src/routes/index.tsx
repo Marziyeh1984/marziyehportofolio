@@ -262,7 +262,7 @@ function Index() {
               Start your project
             </DialogTitle>
             <DialogDescription className="text-popover-foreground/70">
-              Write the full details of your project — I&apos;ll check it and give you a
+              Please share your project details. I&apos;ll review them and send you the
               timeline and budget.
             </DialogDescription>
           </DialogHeader>
@@ -320,10 +320,10 @@ function Index() {
               </div>
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 border-2 border-foreground bg-secondary px-8 py-4 font-display text-base uppercase tracking-[0.15em] text-secondary-foreground transition-transform hover:-translate-y-0.5"
-                style={{ boxShadow: "var(--shadow-glow)" }}
+                className="group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t-2 border-secondary py-4 font-display text-base uppercase tracking-[0.15em] text-popover-foreground transition-colors hover:bg-secondary hover:px-3 hover:text-secondary-foreground"
               >
-                Send it <Send className="h-4 w-4" />
+                <span>Send</span>
+                <ArrowUpRight className="h-6 w-6 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
               </button>
             </form>
           )}

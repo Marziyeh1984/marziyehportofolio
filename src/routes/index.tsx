@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/dialog";
 import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
 import portrait from "@/assets/marziyeh-portrait.png.asset.json";
+import { useInView } from "@/hooks/use-in-view";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({

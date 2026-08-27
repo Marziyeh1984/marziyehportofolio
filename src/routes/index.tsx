@@ -173,17 +173,7 @@ function Index() {
           </h2>
           <ul className="mt-6">
             {services.map((s, i) => (
-              <li
-                key={s}
-                className="flex items-center gap-4 border-t-2 border-primary-foreground py-3 text-primary-foreground first:border-t-0"
-              >
-                <span className="font-display text-sm font-bold opacity-60">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="font-display text-base uppercase tracking-tight text-primary-foreground">
-                  {s}
-                </span>
-              </li>
+              <ServiceItem key={s} s={s} i={i} />
             ))}
           </ul>
         </section>

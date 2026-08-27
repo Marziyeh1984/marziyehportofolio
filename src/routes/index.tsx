@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/dialog";
 import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
 import portrait from "@/assets/marziyeh-portrait.png.asset.json";
+import { useInView } from "@/hooks/use-in-view";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,6 +63,27 @@ const contacts = [
   },
   { icon: X, label: "X", value: "@lak_202", url: "https://x.com/lak_202" },
 ];
+
+function ServiceItem({ s, i }: { s: string; i: number }) {
+  const { ref, isInView } = useInView<HTMLLIElement>();
+  return (
+    <li
+      ref={ref}
+      className={cn(
+        "flex items-center gap-4 border-t-2 border-primary-foreground py-3 text-primary-foreground first:border-t-0 transition-opacity duration-500 ease-out",
+        isInView ? "opacity-100" : "opacity-0",
+      )}
+      style={{ transitionDelay: `${i * 50}ms` }}
+    >
+      <span className="font-display text-sm font-bold opacity-60">
+        {String(i + 1).padStart(2, "0")}
+      </span>
+      <span className="font-display text-base uppercase tracking-tight text-primary-foreground">
+        {s}
+      </span>
+    </li>
+  );
+}
 
 function Index() {
   const [open, setOpen] = useState(false);
@@ -150,17 +173,7 @@ function Index() {
           </h2>
           <ul className="mt-6">
             {services.map((s, i) => (
-              <li
-                key={s}
-                className="flex items-center gap-4 border-t-2 border-primary-foreground py-3 text-primary-foreground first:border-t-0"
-              >
-                <span className="font-display text-sm font-bold opacity-60">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="font-display text-base uppercase tracking-tight text-primary-foreground">
-                  {s}
-                </span>
-              </li>
+              <ServiceItem key={s} s={s} i={i} />
             ))}
           </ul>
         </section>

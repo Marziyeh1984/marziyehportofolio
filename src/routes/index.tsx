@@ -70,8 +70,8 @@ function ServiceItem({ s, i }: { s: string; i: number }) {
     <li
       ref={ref}
       className={cn(
-        "flex items-center gap-4 border-t-2 border-primary-foreground py-3 text-primary-foreground first:border-t-0 transition-all duration-500 ease-out",
-        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
+        "flex items-center gap-4 border-t-2 border-primary-foreground py-3 text-primary-foreground first:border-t-0 transition-opacity duration-500 ease-out",
+        isInView ? "opacity-100" : "opacity-0",
       )}
       style={{ transitionDelay: `${i * 50}ms` }}
     >

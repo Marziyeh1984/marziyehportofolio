@@ -38,6 +38,7 @@ const services = [
   "Machine learning models",
   "SaaS development",
   "Web applications",
+  "UI / UX",
   "Blockchain-based platforms",
 ];
 
@@ -91,6 +92,9 @@ function Index() {
         {/* Header bar */}
         <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b-2 border-foreground bg-primary px-5 py-4">
           <div className="min-w-0">
+            <p className="truncate text-xs font-bold uppercase tracking-widest text-primary-foreground/70">
+              Hi
+            </p>
             <p className="truncate font-display text-lg uppercase leading-none tracking-tight text-primary-foreground sm:text-xl">
               Marziyeh Lak
             </p>

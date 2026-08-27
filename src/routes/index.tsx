@@ -205,7 +205,7 @@ function Index() {
         {/* Brief */}
         <section className="border-t-2 border-foreground bg-accent px-5 py-10 text-center">
           <p className="mx-auto max-w-md font-display text-xl uppercase leading-tight tracking-tight text-accent-foreground sm:text-2xl">
-            Write full details of your project — I&apos;ll review it and send a timeline and budget.
+            Please share your project details. I&apos;ll review them and send you the timeline and budget.
           </p>
           <button
             onClick={() => {

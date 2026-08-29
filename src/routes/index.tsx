@@ -233,11 +233,11 @@ function Index() {
             className="h-full w-full object-cover object-top grayscale"
           />
           <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 overflow-hidden border-t-2 border-foreground bg-primary px-5 py-4">
-            <span className="font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">
-              Building AI &amp; Software
+            <span className="min-w-0 truncate font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">
+              Marziyeh Lak
             </span>
-            <span className="font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">
-              That Ships
+            <span className="shrink-0 font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">
+              AI × Code
             </span>
           </div>
         </div>

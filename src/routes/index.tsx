@@ -224,7 +224,25 @@ function Index() {
         </footer>
       </div>
 
-      <Dialog open={open} onOpenChange={setOpen}>
+      {/* Right-side portrait panel — fills the desktop viewport */}
+      <aside className="relative hidden min-w-0 flex-1 lg:block" aria-hidden="true">
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <img
+            src={portrait.url}
+            alt=""
+            className="h-full w-full object-cover object-top grayscale"
+          />
+          <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 overflow-hidden border-t-2 border-foreground bg-primary px-5 py-4">
+            <span className="font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">
+              Building AI &amp; Software
+            </span>
+            <span className="font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">
+              That Ships
+            </span>
+          </div>
+        </div>
+      </aside>
+    </main>
         <DialogContent className="max-w-sm rounded-none border-2 border-foreground bg-popover">
           <DialogHeader>
             <DialogTitle className="font-display text-xl uppercase tracking-tight text-popover-foreground">

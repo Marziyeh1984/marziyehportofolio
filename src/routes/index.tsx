@@ -8,7 +8,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
-import portrait from "@/assets/marziyeh-portrait.jpg.asset.json";
+import portrait from "@/assets/marziyeh-rect.jpg";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
 
@@ -126,7 +126,7 @@ function Index() {
             </p>
           </div>
           <img
-            src={portrait.url}
+            src={portrait}
             alt="Portrait of Marziyeh Lak"
             className="h-12 w-12 shrink-0 rounded-full border-2 border-primary-foreground object-cover"
           />
@@ -158,9 +158,9 @@ function Index() {
           </p>
           <div className="mt-6 border-2 border-foreground bg-muted">
             <img
-              src={portrait.url}
+              src={portrait}
               alt="Black and white portrait of Marziyeh Lak"
-              className="aspect-square w-full object-cover object-top"
+              className="aspect-[593/1107] w-full object-cover"
               loading="eager"
             />
           </div>
@@ -228,7 +228,7 @@ function Index() {
       <aside className="relative hidden min-w-0 flex-1 lg:block" aria-hidden="true">
         <div className="sticky top-0 h-screen overflow-hidden">
           <img
-            src={portrait.url}
+            src={portrait}
             alt=""
             className="h-full w-full object-cover object-top grayscale"
           />

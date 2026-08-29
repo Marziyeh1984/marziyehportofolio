@@ -111,7 +111,7 @@ function Index() {
 
   return (
     <main className="flex min-h-screen w-full bg-background">
-      <div className="w-full max-w-3xl border-x-2 border-foreground lg:shrink-0">
+      <div className="w-full max-w-3xl border-x-2 border-foreground lg:max-w-xl lg:shrink-0">
         {/* Header bar */}
         <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b-2 border-foreground bg-primary px-5 py-4">
           <div className="min-w-0">

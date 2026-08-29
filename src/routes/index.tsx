@@ -160,7 +160,7 @@ function Index() {
             <img
               src={portrait}
               alt="Black and white portrait of Marziyeh Lak"
-              className="aspect-[593/1107] w-full object-cover"
+              className="aspect-[405/1107] w-full object-cover"
               loading="eager"
             />
           </div>

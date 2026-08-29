@@ -242,7 +242,6 @@ function Index() {
           </div>
         </div>
       </aside>
-    </main>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-sm rounded-none border-2 border-foreground bg-popover">

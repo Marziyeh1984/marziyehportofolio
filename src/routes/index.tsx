@@ -110,8 +110,8 @@ function Index() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-background">
-      <div className="mx-auto w-full max-w-3xl border-x-2 border-foreground">
+    <main className="flex min-h-screen w-full bg-background">
+      <div className="w-full border-x-2 border-foreground lg:w-[36rem] lg:shrink-0">
         {/* Header bar */}
         <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b-2 border-foreground bg-primary px-5 py-4">
           <div className="min-w-0">
@@ -223,6 +223,25 @@ function Index() {
           © {new Date().getFullYear()} Marziyeh Lak
         </footer>
       </div>
+
+      {/* Right-side portrait panel — fills the desktop viewport */}
+      <aside className="relative hidden min-w-0 flex-1 lg:block" aria-hidden="true">
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <img
+            src={portrait.url}
+            alt=""
+            className="h-full w-full object-cover object-top grayscale"
+          />
+          <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 overflow-hidden border-t-2 border-foreground bg-primary px-5 py-4">
+            <span className="min-w-0 truncate font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">
+              Marziyeh Lak
+            </span>
+            <span className="shrink-0 font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">
+              AI × Code
+            </span>
+          </div>
+        </div>
+      </aside>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-sm rounded-none border-2 border-foreground bg-popover">

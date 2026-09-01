@@ -156,11 +156,11 @@ function Index() {
             Senior engineer designing and shipping AI automation, ERP and product platforms
             end-to-end.
           </p>
-          <div className="mx-auto mt-6 w-full max-w-[200px] border-2 border-foreground bg-muted sm:max-w-[240px]">
+          <div className="mx-auto mt-6 w-full max-w-[260px] border-2 border-foreground bg-muted sm:max-w-[300px]">
             <img
               src={portrait}
               alt="Black and white portrait of Marziyeh Lak"
-              className="aspect-[405/1107] w-full object-cover"
+              className="aspect-square w-full object-cover object-top"
               loading="eager"
             />
           </div>

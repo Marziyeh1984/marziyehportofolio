@@ -8,7 +8,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ArrowUpRight, Mail, Github, MessageCircle, Send, X } from "lucide-react";
-import portrait from "@/assets/marziyeh-rect.jpg";
+import portraitAsset from "@/assets/marziyeh-profile-balanced.jpg.asset.json";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
 
@@ -126,7 +126,7 @@ function Index() {
             </p>
           </div>
           <img
-            src={portrait}
+            src={portraitAsset.url}
             alt="Portrait of Marziyeh Lak"
             className="h-12 w-12 shrink-0 rounded-full border-2 border-primary-foreground object-cover"
           />
@@ -156,11 +156,11 @@ function Index() {
             Senior engineer designing and shipping AI automation, ERP and product platforms
             end-to-end.
           </p>
-          <div className="mx-auto mt-6 w-full max-w-[260px] border-2 border-foreground bg-muted sm:max-w-[300px]">
+          <div className="mx-auto mt-6 w-full max-w-[290px] border-2 border-foreground bg-muted sm:max-w-[330px]">
             <img
-              src={portrait}
+              src={portraitAsset.url}
               alt="Black and white portrait of Marziyeh Lak"
-              className="aspect-square w-full object-cover object-top"
+              className="aspect-square w-full object-cover object-center"
               loading="eager"
             />
           </div>
@@ -228,7 +228,7 @@ function Index() {
       <aside className="relative hidden min-w-0 flex-1 lg:block" aria-hidden="true">
         <div className="sticky top-0 h-screen overflow-hidden">
           <img
-            src={portrait}
+            src={portraitAsset.url}
             alt=""
             className="h-full w-full object-cover object-top grayscale"
           />

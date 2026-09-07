@@ -61,7 +61,12 @@ const contacts = [
     value: "+98 910 183 6737",
     url: "https://wa.me/989101836737",
   },
-  { icon: X, label: "X", value: "@lak_202", url: "https://x.com/lak_202" },
+  {
+    icon: AtSign,
+    label: "Threads",
+    value: "@web_marzi",
+    url: "https://www.threads.net/@web_marzi",
+  },
 ];
 
 function ServiceItem({ s, i }: { s: string; i: number }) {

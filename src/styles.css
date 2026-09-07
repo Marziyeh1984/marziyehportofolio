@@ -19,7 +19,7 @@
  */
 
 @theme inline {
-  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Anton", "Arial Narrow", system-ui, sans-serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
   --color-accent-2: var(--accent);
   --radius-sm: calc(var(--radius) - 4px);

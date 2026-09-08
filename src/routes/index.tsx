@@ -7,7 +7,13 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ArrowUpRight, Mail, Github, MessageCircle, Send, AtSign } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
+import {
+  ThreadsIcon,
+  TelegramIcon,
+  WhatsAppIcon,
+  GithubBrandIcon,
+} from "@/components/brand-icons";
 import portraitAsset from "@/assets/marziyeh-profile-balanced.jpg.asset.json";
 import { usePortrait } from "@/hooks/use-portrait";
 import { useInView } from "@/hooks/use-in-view";

@@ -139,8 +139,14 @@ function PhotoStudio() {
           onMouseMove={(e) => onMove(e.clientX, e.clientY)}
           onMouseUp={onUp}
           onMouseLeave={onUp}
-          onTouchStart={(e) => onDown(e.touches[0].clientX, e.touches[0].clientY)}
-          onTouchMove={(e) => onMove(e.touches[0].clientX, e.touches[0].clientY)}
+          onTouchStart={(e) => {
+            const t = e.touches[0];
+            if (t) onDown(t.clientX, t.clientY);
+          }}
+          onTouchMove={(e) => {
+            const t = e.touches[0];
+            if (t) onMove(t.clientX, t.clientY);
+          }}
           onTouchEnd={onUp}
         >
           {img ? (

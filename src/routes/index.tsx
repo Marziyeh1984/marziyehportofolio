@@ -7,7 +7,13 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ArrowUpRight, Mail, Github, MessageCircle, Send, AtSign } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
+import {
+  ThreadsIcon,
+  TelegramIcon,
+  WhatsAppIcon,
+  GithubBrandIcon,
+} from "@/components/brand-icons";
 import portraitAsset from "@/assets/marziyeh-profile-balanced.jpg.asset.json";
 import { usePortrait } from "@/hooks/use-portrait";
 import { useInView } from "@/hooks/use-in-view";
@@ -53,17 +59,22 @@ const work = [
 ];
 
 const contacts = [
-  { icon: Send, label: "Telegram", value: "@lak_202", url: "https://t.me/lak_202" },
+  { icon: TelegramIcon, label: "Telegram", value: "@lak_202", url: "https://t.me/lak_202" },
   { icon: Mail, label: "Email", value: "lak20ml@gmail.com", url: "mailto:lak20ml@gmail.com" },
-  { icon: Github, label: "GitHub", value: "capybara003", url: "https://github.com/capybara003" },
   {
-    icon: MessageCircle,
+    icon: GithubBrandIcon,
+    label: "GitHub",
+    value: "capybara003",
+    url: "https://github.com/capybara003",
+  },
+  {
+    icon: WhatsAppIcon,
     label: "WhatsApp",
     value: "+98 910 183 6737",
     url: "https://wa.me/989101836737",
   },
   {
-    icon: AtSign,
+    icon: ThreadsIcon,
     label: "Threads",
     value: "@web_marzi",
     url: "https://www.threads.net/@web_marzi",

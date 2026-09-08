@@ -59,17 +59,22 @@ const work = [
 ];
 
 const contacts = [
-  { icon: Send, label: "Telegram", value: "@lak_202", url: "https://t.me/lak_202" },
+  { icon: TelegramIcon, label: "Telegram", value: "@lak_202", url: "https://t.me/lak_202" },
   { icon: Mail, label: "Email", value: "lak20ml@gmail.com", url: "mailto:lak20ml@gmail.com" },
-  { icon: Github, label: "GitHub", value: "capybara003", url: "https://github.com/capybara003" },
   {
-    icon: MessageCircle,
+    icon: GithubBrandIcon,
+    label: "GitHub",
+    value: "capybara003",
+    url: "https://github.com/capybara003",
+  },
+  {
+    icon: WhatsAppIcon,
     label: "WhatsApp",
     value: "+98 910 183 6737",
     url: "https://wa.me/989101836737",
   },
   {
-    icon: AtSign,
+    icon: ThreadsIcon,
     label: "Threads",
     value: "@web_marzi",
     url: "https://www.threads.net/@web_marzi",

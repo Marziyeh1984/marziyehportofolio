@@ -92,6 +92,7 @@ function ServiceItem({ s, i }: { s: string; i: number }) {
 }
 
 function Index() {
+  const portrait = usePortrait(portraitAsset.url);
   const [open, setOpen] = useState(false);
   const [projectOpen, setProjectOpen] = useState(false);
   const [name, setName] = useState("");
@@ -132,7 +133,7 @@ function Index() {
             </p>
           </div>
           <img
-            src={portraitAsset.url}
+            src={portrait}
             alt="Portrait of Marziyeh Lak"
             className="h-12 w-12 shrink-0 rounded-full border-2 border-primary-foreground object-cover"
           />
@@ -164,7 +165,7 @@ function Index() {
           </p>
           <div className="mx-auto mt-6 w-full max-w-[290px] border-2 border-foreground bg-muted sm:max-w-[330px]">
             <img
-              src={portraitAsset.url}
+              src={portrait}
               alt="Black and white portrait of Marziyeh Lak"
               className="aspect-square w-full object-cover object-center"
               loading="eager"
@@ -234,7 +235,7 @@ function Index() {
       <aside className="relative hidden min-w-0 flex-1 lg:block" aria-hidden="true">
         <div className="sticky top-0 h-screen overflow-hidden">
           <img
-            src={portraitAsset.url}
+            src={portrait}
             alt=""
             className="h-full w-full object-cover object-top grayscale"
           />

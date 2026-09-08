@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { ArrowUpRight, Mail, Github, MessageCircle, Send, AtSign } from "lucide-react";
 import portraitAsset from "@/assets/marziyeh-profile-balanced.jpg.asset.json";
+import { usePortrait } from "@/hooks/use-portrait";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
 

@@ -236,7 +236,7 @@ function Index() {
           </button>
         </section>
 
-        <footer className="border-t-2 border-foreground bg-primary px-5 py-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">
+        <footer className="border-t-2 border-foreground bg-primary px-5 py-5 text-center font-display text-lg uppercase leading-none tracking-tight text-primary-foreground sm:text-xl">
           Marziyeh Lak
         </footer>
       </div>

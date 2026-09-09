@@ -14,7 +14,6 @@ import {
   WhatsAppIcon,
   GithubBrandIcon,
 } from "@/components/brand-icons";
-import portraitAsset from "@/assets/marziyeh-profile-balanced.jpg.asset.json";
 import { usePortrait } from "@/hooks/use-portrait";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
@@ -103,7 +102,7 @@ function ServiceItem({ s, i }: { s: string; i: number }) {
 }
 
 function Index() {
-  const portrait = usePortrait(portraitAsset.url);
+  const portrait = usePortrait("/marziyeh-portrait.jpg");
   const [open, setOpen] = useState(false);
   const [projectOpen, setProjectOpen] = useState(false);
   const [name, setName] = useState("");

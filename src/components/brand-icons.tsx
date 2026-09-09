@@ -1,5 +1,5 @@
 type IconProps = {
-  className?: string;
+  className?: string | undefined;
 };
 
 function BrandIcon({ className = "", path }: IconProps & { path: string }) {

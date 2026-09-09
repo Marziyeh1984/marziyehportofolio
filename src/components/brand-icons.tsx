@@ -2,7 +2,7 @@ type IconProps = {
   className?: string;
 };
 
-function BrandIcon({ className, path }: IconProps & { path: string }) {
+function BrandIcon({ className = "", path }: IconProps & { path: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
       <path d={path} />

@@ -238,7 +238,7 @@ function Index() {
         </section>
 
         <footer className="border-t-2 border-foreground bg-primary px-5 py-5 text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">
-          © {new Date().getFullYear()} Marziyeh Lak
+          Marziyeh Lak
         </footer>
       </div>
 

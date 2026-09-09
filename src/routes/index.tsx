@@ -135,7 +135,10 @@ function Index() {
             <p className="truncate text-xs font-bold uppercase tracking-widest text-primary-foreground/70">
               Hi
             </p>
-            <p className="truncate font-display text-lg uppercase leading-none tracking-tight text-primary-foreground sm:text-xl">
+            <p
+              className="truncate font-display text-lg uppercase leading-none tracking-tight text-primary-foreground sm:text-xl"
+              style={{ wordSpacing: "0.35em" }}
+            >
               Marziyeh Lak
             </p>
             <p className="mt-1 truncate text-xs font-semibold text-primary-foreground/70">

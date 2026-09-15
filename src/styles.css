@@ -304,8 +304,13 @@
   .portfolio-intro__name,
   .portfolio-intro__role,
   .portfolio-intro__loader,
-  .portfolio-intro__loader span {
+  .portfolio-intro__loader span,
+  .portfolio-intro__scan {
     animation: none;
     transition-duration: 50ms;
+  }
+
+  .portfolio-intro__scan {
+    display: none;
   }
 }

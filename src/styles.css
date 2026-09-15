@@ -216,6 +216,36 @@
   transition: opacity 400ms ease, transform 400ms ease;
 }
 
+.portfolio-intro__scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(255 255 255 / 0.045) 0px,
+    rgb(255 255 255 / 0.045) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+.portfolio-intro__scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 96px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 0.09) 65%,
+    rgb(255 255 255 / 0.16)
+  );
+  filter: blur(1px);
+  animation: intro-scan 2.6s linear infinite;
+}
+
 .portfolio-intro__frame {
   position: absolute;
   inset: 1rem;

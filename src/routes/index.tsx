@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -103,11 +103,39 @@ function ServiceItem({ s, i }: { s: string; i: number }) {
 
 function Index() {
   const portrait = usePortrait("/marziyeh-portrait.jpg");
+  const [introState, setIntroState] = useState<"visible" | "leaving" | "hidden">(
+    "visible",
+  );
   const [open, setOpen] = useState(false);
   const [projectOpen, setProjectOpen] = useState(false);
   const [name, setName] = useState("");
   const [details, setDetails] = useState("");
   const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const leaveTimer = window.setTimeout(
+      () => setIntroState("leaving"),
+      reduceMotion ? 250 : 1750,
+    );
+    const hideTimer = window.setTimeout(
+      () => setIntroState("hidden"),
+      reduceMotion ? 300 : 2200,
+    );
+
+    return () => {
+      window.clearTimeout(leaveTimer);
+      window.clearTimeout(hideTimer);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (introState === "hidden") document.body.style.overflow = "";
+  }, [introState]);
 
   const message = () =>
     `New project request%0A%0AName: ${encodeURIComponent(name)}%0A%0AProject details:%0A${encodeURIComponent(details)}`;
@@ -128,6 +156,39 @@ function Index() {
 
   return (
     <main className="flex min-h-screen w-full bg-background">
+      {introState !== "hidden" && (
+        <div
+          className={cn(
+            "portfolio-intro fixed inset-0 z-[100] flex min-h-[100dvh] items-center justify-center overflow-hidden bg-primary px-6 text-primary-foreground",
+            introState === "leaving" && "portfolio-intro--leaving",
+          )}
+          role="status"
+          aria-label="Loading Marziyeh Lak portfolio"
+        >
+          <div className="portfolio-intro__frame" aria-hidden="true" />
+          <div className="portfolio-intro__content relative z-10 flex w-full max-w-md flex-col items-center text-center">
+            <div className="portfolio-intro__portrait-wrap">
+              <img
+                src={portrait}
+                alt="Portrait of Marziyeh Lak"
+                className="portfolio-intro__portrait h-24 w-24 rounded-full object-cover object-top sm:h-28 sm:w-28"
+              />
+            </div>
+            <p
+              className="portfolio-intro__name mt-7 font-display text-3xl font-bold uppercase leading-none text-primary-foreground sm:text-4xl"
+              style={{ wordSpacing: "0.35em" }}
+            >
+              Marziyeh Lak
+            </p>
+            <p className="portfolio-intro__role mt-3 text-sm font-bold text-primary-foreground/70 sm:text-base">
+              Senior AI &amp; Full-Stack Engineer
+            </p>
+            <div className="portfolio-intro__loader mt-9 h-1 w-40 overflow-hidden bg-primary-foreground/20 sm:w-48">
+              <span className="block h-full bg-primary-foreground" />
+            </div>
+          </div>
+        </div>
+      )}
       <div className="w-full border-x-2 border-foreground lg:w-[36rem] lg:shrink-0">
         {/* Header bar */}
         <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b-2 border-foreground bg-primary px-5 py-4">

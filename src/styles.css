@@ -161,3 +161,112 @@
     display: none;
   }
 }
+
+@keyframes intro-frame-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes intro-portrait-in {
+  from {
+    opacity: 0;
+    transform: scale(0.72) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes intro-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes intro-load {
+  from {
+    transform: translateX(-105%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.portfolio-intro {
+  opacity: 1;
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.portfolio-intro__frame {
+  position: absolute;
+  inset: 1rem;
+  border: 2px solid var(--color-primary-foreground);
+  opacity: 0.28;
+  transform-origin: center;
+  animation: intro-frame-in 550ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.portfolio-intro__portrait-wrap {
+  border: 3px solid var(--color-primary-foreground);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  box-shadow: 7px 7px 0 var(--color-accent);
+  animation: intro-portrait-in 550ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.portfolio-intro__portrait {
+  display: block;
+  border: 2px solid var(--color-primary);
+}
+
+.portfolio-intro__name {
+  animation: intro-copy-in 450ms 340ms ease-out both;
+}
+
+.portfolio-intro__role {
+  animation: intro-copy-in 450ms 460ms ease-out both;
+}
+
+.portfolio-intro__loader {
+  animation: intro-copy-in 350ms 580ms ease-out both;
+}
+
+.portfolio-intro__loader span {
+  transform-origin: left;
+  animation: intro-load 900ms 650ms cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.portfolio-intro--leaving {
+  opacity: 0;
+  transform: translateY(-1.25rem);
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .portfolio-intro__frame {
+    inset: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-intro,
+  .portfolio-intro__frame,
+  .portfolio-intro__portrait-wrap,
+  .portfolio-intro__name,
+  .portfolio-intro__role,
+  .portfolio-intro__loader,
+  .portfolio-intro__loader span {
+    animation: none;
+    transition-duration: 50ms;
+  }
+}

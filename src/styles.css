@@ -202,6 +202,15 @@
   }
 }
 
+@keyframes intro-scan {
+  from {
+    transform: translateX(-12%);
+  }
+  to {
+    transform: translateX(112vw);
+  }
+}
+
 .portfolio-intro {
   opacity: 1;
   transition: opacity 400ms ease, transform 400ms ease;

@@ -165,6 +165,8 @@ function Index() {
           role="status"
           aria-label="Loading Marziyeh Lak portfolio"
         >
+          <div className="portfolio-intro__scanlines" aria-hidden="true" />
+          <div className="portfolio-intro__scan" aria-hidden="true" />
           <div className="portfolio-intro__frame" aria-hidden="true" />
           <div className="portfolio-intro__content relative z-10 flex w-full max-w-md flex-col items-center text-center">
             <div className="portfolio-intro__portrait-wrap">

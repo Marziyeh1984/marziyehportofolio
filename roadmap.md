@@ -1,3 +1,3 @@
 # Roadmap
 
-- [x] Intro screen: black, simple, with vertical moving scanlines (retro-digital feel) — done, verified mobile + desktop
+- [x] Intro screen: Pesquera Diez-inspired black-to-yellow reveal with oversized moving name and split monogram

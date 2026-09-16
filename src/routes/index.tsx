@@ -17,6 +17,7 @@ import {
 import { usePortrait } from "@/hooks/use-portrait";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
+import facePortrait from "@/assets/marziyeh-face-bw.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -102,7 +103,7 @@ function ServiceItem({ s, i }: { s: string; i: number }) {
 }
 
 function Index() {
-  const portrait = usePortrait("/marziyeh-portrait.jpg");
+  const portrait = usePortrait(facePortrait);
   const [introState, setIntroState] = useState<"visible" | "leaving" | "hidden">(
     "visible",
   );
@@ -201,7 +202,7 @@ function Index() {
           <img
             src={portrait}
             alt="Portrait of Marziyeh Lak"
-            className="h-12 w-12 shrink-0 rounded-full border-2 border-primary-foreground object-cover"
+            className="h-12 w-12 shrink-0 rounded-full border-2 border-primary-foreground bg-muted object-cover object-top"
           />
         </header>
 
@@ -233,7 +234,7 @@ function Index() {
             <img
               src={portrait}
               alt="Black and white portrait of Marziyeh Lak"
-              className="aspect-square w-full object-cover object-center"
+              className="aspect-square w-full object-contain object-bottom"
               loading="eager"
             />
           </div>
@@ -306,7 +307,7 @@ function Index() {
           <img
             src={portrait}
             alt=""
-            className="h-full w-full object-cover object-top grayscale"
+            className="h-full w-full object-contain object-bottom grayscale"
           />
           <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 overflow-hidden border-t-2 border-foreground bg-primary px-5 py-4">
             <span className="min-w-0 truncate font-display text-sm uppercase tracking-[0.2em] text-primary-foreground">

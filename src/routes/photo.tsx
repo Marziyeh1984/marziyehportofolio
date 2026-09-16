@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { PORTRAIT_KEY, readPortrait } from "@/hooks/use-portrait";
+import facePortrait from "@/assets/marziyeh-face-bw.png";
 
 export const Route = createFileRoute("/photo")({
   head: () => ({
@@ -160,9 +161,9 @@ function PhotoStudio() {
             />
           ) : (
             <img
-              src={saved ?? "/marziyeh-portrait.jpg"}
+              src={saved ?? facePortrait}
               alt="Current profile portrait"
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-contain object-bottom"
             />
           )}
         </div>

@@ -119,11 +119,11 @@ function Index() {
 
     const leaveTimer = window.setTimeout(
       () => setIntroState("leaving"),
-      reduceMotion ? 250 : 1750,
+      reduceMotion ? 250 : 2850,
     );
     const hideTimer = window.setTimeout(
       () => setIntroState("hidden"),
-      reduceMotion ? 300 : 2200,
+      reduceMotion ? 300 : 3300,
     );
 
     return () => {
@@ -165,29 +165,19 @@ function Index() {
           role="status"
           aria-label="Loading Marziyeh Lak portfolio"
         >
-          <div className="portfolio-intro__scanlines" aria-hidden="true" />
-          <div className="portfolio-intro__scan" aria-hidden="true" />
-          <div className="portfolio-intro__frame" aria-hidden="true" />
-          <div className="portfolio-intro__content relative z-10 flex w-full max-w-md flex-col items-center text-center">
-            <div className="portfolio-intro__portrait-wrap">
-              <img
-                src={portrait}
-                alt="Portrait of Marziyeh Lak"
-                className="portfolio-intro__portrait h-24 w-24 rounded-full object-cover object-top sm:h-28 sm:w-28"
-              />
-            </div>
-            <p
-              className="portfolio-intro__name mt-7 font-display text-3xl font-bold uppercase leading-none text-primary-foreground sm:text-4xl"
-              style={{ wordSpacing: "0.35em" }}
-            >
-              Marziyeh Lak
-            </p>
-            <p className="portfolio-intro__role mt-3 text-sm font-bold text-primary-foreground/70 sm:text-base">
-              Senior AI &amp; Full-Stack Engineer
-            </p>
-            <div className="portfolio-intro__loader mt-9 h-1 w-40 overflow-hidden bg-primary-foreground/20 sm:w-48">
-              <span className="block h-full bg-primary-foreground" />
-            </div>
+          <div className="portfolio-intro__curtain" aria-hidden="true" />
+          <div className="portfolio-intro__meta portfolio-intro__meta--top">
+            Senior AI &amp; Full-Stack Engineer
+          </div>
+          <div className="portfolio-intro__word" aria-hidden="true">
+            <span>Marziyeh Lak</span>
+          </div>
+          <div className="portfolio-intro__monogram" aria-hidden="true">
+            <span>M</span>
+            <span>L</span>
+          </div>
+          <div className="portfolio-intro__meta portfolio-intro__meta--bottom">
+            Portfolio · 2026
           </div>
         </div>
       )}

@@ -253,6 +253,8 @@
 .portfolio-intro__meta--top {
   left: 5vw;
   top: 8vh;
+  max-width: 14rem;
+  font-size: 1rem;
 }
 
 .portfolio-intro__meta--bottom {

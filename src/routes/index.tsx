@@ -17,7 +17,7 @@ import {
 import { usePortrait } from "@/hooks/use-portrait";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
-import facePortrait from "@/assets/marziyeh-face-bw.png";
+import facePortrait from "@/assets/marziyeh-face-bw-patterned.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({

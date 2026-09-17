@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { PORTRAIT_KEY, readPortrait } from "@/hooks/use-portrait";
-import facePortrait from "@/assets/marziyeh-face-bw.png";
+import facePortrait from "@/assets/marziyeh-face-bw-patterned.png";
 
 export const Route = createFileRoute("/photo")({
   head: () => ({

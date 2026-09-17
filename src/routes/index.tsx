@@ -178,7 +178,7 @@ function Index() {
             <span>L</span>
           </div>
           <div className="portfolio-intro__meta portfolio-intro__meta--bottom">
-            Portfolio · 2026
+            Portfolio · 2024
           </div>
         </div>
       )}

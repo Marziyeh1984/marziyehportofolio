@@ -294,7 +294,12 @@ function Index() {
         </section>
 
         <footer
-          className="border-t-2 border-foreground bg-primary px-5 py-5 text-center font-display text-lg uppercase leading-none tracking-tight text-primary-foreground sm:text-xl"
+          className={cn(
+            "border-t-2 border-foreground bg-primary px-5 py-5 text-center font-display text-lg uppercase leading-none tracking-tight text-primary-foreground transition-all duration-700 ease-out sm:text-xl",
+            introState === "hidden"
+              ? "translate-y-0 opacity-100"
+              : "translate-y-6 opacity-0",
+          )}
           style={{ wordSpacing: "0.35em" }}
         >
           Marziyeh Lak

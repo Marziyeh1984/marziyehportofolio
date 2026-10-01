@@ -343,6 +343,25 @@ function Index() {
           </ul>
         </section>
 
+        {/* Skills */}
+        <section className="border-b-2 border-foreground bg-primary" aria-label="Technical skills">
+          <h2 className="px-5 pt-8 font-display text-3xl uppercase tracking-tight text-primary-foreground sm:text-4xl">
+            Technical Skills
+          </h2>
+          <div className="mt-6 border-t-2 border-primary-foreground/40">
+            {skills.map((s, i) => (
+              <SkillsMarquee
+                key={s.label}
+                label={s.label}
+                items={s.items}
+                reverse={i % 2 === 1}
+                yellow={i % 2 === 1}
+                speed={`${30 + i * 6}s`}
+              />
+            ))}
+          </div>
+        </section>
+
         {/* Work */}
         <section className="px-5 py-10">
           <h2 className="font-display text-3xl uppercase tracking-tight text-foreground sm:text-4xl">

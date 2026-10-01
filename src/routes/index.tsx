@@ -7,7 +7,25 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ArrowUpRight, Mail } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  Code2,
+  FileCode2,
+  Terminal,
+  Braces,
+  Cpu,
+  Globe,
+  Layers,
+  Hexagon,
+  Server,
+  Box,
+  Database,
+  Cloud,
+  Leaf,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
 import {
   ThreadsIcon,
   TelegramIcon,
@@ -80,6 +98,79 @@ const contacts = [
     url: "https://www.threads.net/@web_marzi",
   },
 ];
+
+const skills: { title: string; items: [string, LucideIcon][] }[] = [
+  {
+    title: "Languages",
+    items: [
+      ["JavaScript", Braces],
+      ["TypeScript", FileCode2],
+      ["Python", Terminal],
+      ["MQL4/5", Cpu],
+      ["PineScript", Code2],
+      ["Rust", Cpu],
+      ["C#", Code2],
+      ["C++", Code2],
+    ],
+  },
+  {
+    title: "Frontend",
+    items: [
+      ["React", Code2],
+      ["Redux", Layers],
+      ["Vue.js", Globe],
+      ["TypeScript", FileCode2],
+      ["Next.js", Globe],
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      ["Python/Django", Terminal],
+      ["Nest.js", Hexagon],
+      ["Node.js", Cpu],
+      ["Express.js", Server],
+      ["Spring Boot", Box],
+    ],
+  },
+  {
+    title: "Database",
+    items: [
+      ["MySQL", Database],
+      ["PostgreSQL", Database],
+      ["MongoDB", Leaf],
+      ["Firebase", Cloud],
+      ["Supabase", Zap],
+    ],
+  },
+];
+
+function SkillRow({ title, items, i }: { title: string; items: [string, LucideIcon][]; i: number }) {
+  const loop = [...items, ...items, ...items, ...items];
+  return (
+    <div className="border-t border-foreground/15 py-3 first:border-t-0">
+      <p className="mb-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+        {title}
+      </p>
+      <div className="skills-row overflow-hidden">
+        <div
+          className={cn("skills-track", i % 2 === 1 && "skills-track--reverse")}
+          style={{ animationDuration: `${36 + i * 6}s` }}
+        >
+          {loop.map(([label, Icon], k) => (
+            <span
+              key={k}
+              className="mr-7 inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-foreground"
+            >
+              <Icon className="h-3.5 w-3.5 text-secondary" strokeWidth={2} />
+              {label}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function ServiceItem({ s, i }: { s: string; i: number }) {
   const { ref, isInView } = useInView<HTMLLIElement>();
@@ -252,8 +343,20 @@ function Index() {
           </ul>
         </section>
 
+        {/* Skills */}
+        <section className="px-5 py-8" aria-label="Skills and technologies">
+          <h2 className="font-display text-2xl uppercase tracking-tight text-foreground sm:text-3xl">
+            Skills &amp; Tech
+          </h2>
+          <div className="mt-4">
+            {skills.map((g, i) => (
+              <SkillRow key={g.title} title={g.title} items={g.items} i={i} />
+            ))}
+          </div>
+        </section>
+
         {/* Work */}
-        <section className="px-5 py-10">
+        <section className="border-t-2 border-foreground px-5 py-10">
           <h2 className="font-display text-3xl uppercase tracking-tight text-foreground sm:text-4xl">
             Selected Work
           </h2>

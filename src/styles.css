@@ -269,36 +269,7 @@
   pointer-events: none;
 }
 
-@keyframes marquee-l {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes marquee-r {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
-}
-
-.skills-marquee {
-  overflow: hidden;
-}
-
-.skills-marquee__track {
-  display: flex;
-  width: max-content;
-  align-items: stretch;
-  animation: marquee-l var(--marquee-speed, 36s) linear infinite;
-}
-
-.skills-marquee--reverse .skills-marquee__track {
-  animation-name: marquee-r;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .skills-marquee__track {
-    animation: none;
-  }
-
   .portfolio-intro,
   .portfolio-intro__curtain,
   .portfolio-intro__word,

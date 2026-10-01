@@ -51,25 +51,6 @@ const services = [
   "Blockchain-based platforms",
 ];
 
-const skills = [
-  {
-    label: "Languages",
-    items: ["JavaScript", "TypeScript", "Python", "MQL4/5", "PineScript", "Rust", "C#", "C++"],
-  },
-  {
-    label: "Frontend",
-    items: ["React", "Redux", "Vue.js", "TypeScript", "Next.js"],
-  },
-  {
-    label: "Backend",
-    items: ["Python/Django", "Nest.js", "Node.js", "Express.js", "Spring Boot"],
-  },
-  {
-    label: "Database",
-    items: ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Supabase"],
-  },
-];
-
 const work = [
   { label: "TradeMesh", url: "https://app.trademesh.com" },
   { label: "MoneyTribe21 Leaderboard", url: "https://leaderboard.moneytribe21.com" },
@@ -118,78 +99,6 @@ function ServiceItem({ s, i }: { s: string; i: number }) {
         {s}
       </span>
     </li>
-  );
-}
-
-function SkillsMarquee({
-  label,
-  items,
-  reverse,
-  yellow,
-  speed,
-}: {
-  label: string;
-  items: string[];
-  reverse?: boolean;
-  yellow?: boolean;
-  speed: string;
-}) {
-  const row = (
-    <>
-      {items.map((item) => (
-        <span
-          key={item}
-          className={cn(
-            "flex shrink-0 items-center gap-4 px-5 py-3 font-display text-base font-bold uppercase tracking-tight sm:text-lg",
-            yellow ? "text-secondary-foreground" : "text-primary-foreground",
-          )}
-        >
-          {item}
-          <span className="text-accent" aria-hidden="true">
-            ✦
-          </span>
-        </span>
-      ))}
-    </>
-  );
-  return (
-    <div
-      className={cn(
-        "skills-marquee border-t-2",
-        yellow
-          ? "border-foreground bg-secondary"
-          : "border-primary-foreground/40 bg-primary",
-        reverse && "skills-marquee--reverse",
-      )}
-    >
-      <div className="skills-marquee__track" style={{ "--marquee-speed": speed } as React.CSSProperties}>
-        <span
-          className={cn(
-            "flex shrink-0 items-center border-r-2 px-4 py-3 text-[0.65rem] font-bold uppercase tracking-[0.2em]",
-            yellow
-              ? "border-foreground bg-foreground text-background"
-              : "border-primary-foreground/40 bg-secondary text-secondary-foreground",
-          )}
-        >
-          {label}
-        </span>
-        {row}
-        <span
-          className={cn(
-            "flex shrink-0 items-center border-x-2 px-4 py-3 text-[0.65rem] font-bold uppercase tracking-[0.2em]",
-            yellow
-              ? "border-foreground bg-foreground text-background"
-              : "border-primary-foreground/40 bg-secondary text-secondary-foreground",
-          )}
-          aria-hidden="true"
-        >
-          {label}
-        </span>
-        <span aria-hidden="true" className="contents">
-          {row}
-        </span>
-      </div>
-    </div>
   );
 }
 
@@ -341,25 +250,6 @@ function Index() {
               <ServiceItem key={s} s={s} i={i} />
             ))}
           </ul>
-        </section>
-
-        {/* Skills */}
-        <section className="border-b-2 border-foreground bg-primary" aria-label="Technical skills">
-          <h2 className="px-5 pt-8 font-display text-3xl uppercase tracking-tight text-primary-foreground sm:text-4xl">
-            Technical Skills
-          </h2>
-          <div className="mt-6 border-t-2 border-primary-foreground/40">
-            {skills.map((s, i) => (
-              <SkillsMarquee
-                key={s.label}
-                label={s.label}
-                items={s.items}
-                reverse={i % 2 === 1}
-                yellow={i % 2 === 1}
-                speed={`${30 + i * 6}s`}
-              />
-            ))}
-          </div>
         </section>
 
         {/* Work */}

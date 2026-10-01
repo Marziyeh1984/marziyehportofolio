@@ -398,14 +398,28 @@ function Index() {
 
         <footer
           className={cn(
-            "border-t-2 border-foreground bg-primary px-5 py-5 text-center font-display text-lg uppercase leading-none tracking-tight text-primary-foreground transition-all duration-700 ease-out sm:text-xl",
+            "relative overflow-hidden border-t-2 border-foreground bg-accent px-5 py-8 text-center transition-all duration-700 ease-out",
             introState === "hidden"
               ? "translate-y-0 opacity-100"
               : "translate-y-6 opacity-0",
           )}
-          style={{ wordSpacing: "0.35em" }}
         >
-          Marziyeh Lak
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap font-display text-[3.5rem] font-bold uppercase leading-none tracking-tight text-foreground/10 sm:text-[4.5rem]"
+          >
+            ML
+          </span>
+          <p
+            className="relative font-display text-2xl uppercase leading-none tracking-tight text-foreground sm:text-3xl"
+            style={{ wordSpacing: "0.35em" }}
+          >
+            Marziyeh Lak
+          </p>
+          <span
+            aria-hidden="true"
+            className="mx-auto mt-3 block h-1 w-14 bg-foreground"
+          />
         </footer>
       </div>
 

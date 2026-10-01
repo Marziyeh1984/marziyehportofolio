@@ -51,6 +51,25 @@ const services = [
   "Blockchain-based platforms",
 ];
 
+const skills = [
+  {
+    label: "Languages",
+    items: ["JavaScript", "TypeScript", "Python", "MQL4/5", "PineScript", "Rust", "C#", "C++"],
+  },
+  {
+    label: "Frontend",
+    items: ["React", "Redux", "Vue.js", "TypeScript", "Next.js"],
+  },
+  {
+    label: "Backend",
+    items: ["Python/Django", "Nest.js", "Node.js", "Express.js", "Spring Boot"],
+  },
+  {
+    label: "Database",
+    items: ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Supabase"],
+  },
+];
+
 const work = [
   { label: "TradeMesh", url: "https://app.trademesh.com" },
   { label: "MoneyTribe21 Leaderboard", url: "https://leaderboard.moneytribe21.com" },

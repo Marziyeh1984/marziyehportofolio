@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-// Skills section marquee styles live in src/styles.css (.skills-marquee)
 import { useEffect, useState } from "react";
 import {
   Dialog,

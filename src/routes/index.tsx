@@ -121,6 +121,78 @@ function ServiceItem({ s, i }: { s: string; i: number }) {
   );
 }
 
+function SkillsMarquee({
+  label,
+  items,
+  reverse,
+  yellow,
+  speed,
+}: {
+  label: string;
+  items: string[];
+  reverse?: boolean;
+  yellow?: boolean;
+  speed: string;
+}) {
+  const row = (
+    <>
+      {items.map((item) => (
+        <span
+          key={item}
+          className={cn(
+            "flex shrink-0 items-center gap-4 px-5 py-3 font-display text-base font-bold uppercase tracking-tight sm:text-lg",
+            yellow ? "text-secondary-foreground" : "text-primary-foreground",
+          )}
+        >
+          {item}
+          <span className="text-accent" aria-hidden="true">
+            ✦
+          </span>
+        </span>
+      ))}
+    </>
+  );
+  return (
+    <div
+      className={cn(
+        "skills-marquee border-t-2",
+        yellow
+          ? "border-foreground bg-secondary"
+          : "border-primary-foreground/40 bg-primary",
+        reverse && "skills-marquee--reverse",
+      )}
+    >
+      <div className="skills-marquee__track" style={{ "--marquee-speed": speed } as React.CSSProperties}>
+        <span
+          className={cn(
+            "flex shrink-0 items-center border-r-2 px-4 py-3 text-[0.65rem] font-bold uppercase tracking-[0.2em]",
+            yellow
+              ? "border-foreground bg-foreground text-background"
+              : "border-primary-foreground/40 bg-secondary text-secondary-foreground",
+          )}
+        >
+          {label}
+        </span>
+        {row}
+        <span
+          className={cn(
+            "flex shrink-0 items-center border-x-2 px-4 py-3 text-[0.65rem] font-bold uppercase tracking-[0.2em]",
+            yellow
+              ? "border-foreground bg-foreground text-background"
+              : "border-primary-foreground/40 bg-secondary text-secondary-foreground",
+          )}
+          aria-hidden="true"
+        >
+          {label}
+        </span>
+        <span aria-hidden="true" className="contents">
+          {row}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   const portrait = usePortrait(facePortrait);
   const [introState, setIntroState] = useState<"visible" | "leaving" | "hidden">(

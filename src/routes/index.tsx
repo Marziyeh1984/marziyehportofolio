@@ -356,8 +356,8 @@ function Index() {
         </section>
 
         {/* Work */}
-        <section className="border-t-2 border-foreground px-5 py-10">
-          <h2 className="font-display text-3xl uppercase tracking-tight text-foreground sm:text-4xl">
+        <section className="border-t-2 border-foreground bg-primary px-5 py-10">
+          <h2 className="font-display text-3xl uppercase tracking-tight text-primary-foreground sm:text-4xl">
             Selected Work
           </h2>
           <ul className="mt-6">
@@ -367,7 +367,7 @@ function Index() {
                   href={w.url}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t-2 border-foreground py-4 transition-colors hover:bg-primary hover:px-3 hover:text-primary-foreground"
+                  className="group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-t-2 border-primary-foreground py-4 text-primary-foreground transition-all hover:px-3"
                 >
                   <span className="min-w-0 break-words font-display text-lg uppercase leading-tight tracking-tight sm:text-2xl">
                     {w.label}

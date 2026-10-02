@@ -302,7 +302,7 @@ function Index() {
           onClick={() => setOpen(true)}
           className="block w-full border-b-2 border-foreground bg-secondary px-5 py-4 text-center font-display text-xl uppercase tracking-tight text-secondary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
         >
-          Get in touch
+          Let&apos;s talk
         </button>
 
         {/* Hero */}
@@ -392,7 +392,7 @@ function Index() {
             className="mt-6 inline-flex items-center gap-2 border-2 border-foreground bg-secondary px-8 py-4 font-display text-sm uppercase tracking-[0.15em] text-secondary-foreground transition-transform hover:-translate-y-0.5"
             style={{ boxShadow: "var(--shadow-glow)" }}
           >
-            Get in touch
+            Let&apos;s talk
           </button>
         </section>
 
@@ -436,7 +436,7 @@ function Index() {
         <DialogContent className="max-w-sm rounded-none border-2 border-foreground bg-popover">
           <DialogHeader>
             <DialogTitle className="font-display text-xl uppercase tracking-tight text-popover-foreground">
-              Get in touch
+              Let&apos;s talk
             </DialogTitle>
             <DialogDescription className="text-popover-foreground/70">
               Pick a channel — it opens directly.

@@ -302,7 +302,7 @@ function Index() {
           onClick={() => setOpen(true)}
           className="block w-full border-b-2 border-foreground bg-secondary px-5 py-4 text-center font-display text-xl uppercase tracking-tight text-secondary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
         >
-          Let&apos;s talk
+          Get in touch
         </button>
 
         {/* Hero */}

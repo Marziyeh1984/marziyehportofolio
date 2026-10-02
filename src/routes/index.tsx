@@ -382,7 +382,7 @@ function Index() {
         {/* Brief */}
         <section className="border-t-2 border-foreground bg-accent px-5 py-10 text-center">
           <p className="mx-auto max-w-md font-display text-xl uppercase leading-tight tracking-tight text-accent-foreground sm:text-2xl">
-            Please share your project details. I&apos;ll review them and send you the timeline and budget.
+            Please share your project requirements with me. I&apos;ll review them carefully and get back to you with the estimated timeline and budget.
           </p>
           <button
             onClick={() => {
@@ -470,8 +470,8 @@ function Index() {
               Start your project
             </DialogTitle>
             <DialogDescription className="text-popover-foreground/70">
-              Please share your project details. I&apos;ll review them and send you the
-              timeline and budget.
+              Please share your project requirements with me. I&apos;ll review them
+              carefully and get back to you with the estimated timeline and budget.
             </DialogDescription>
           </DialogHeader>
           {sent ? (

@@ -398,7 +398,7 @@ function Index() {
 
         <footer
           className={cn(
-            "relative overflow-hidden border-t-2 border-foreground bg-accent-soft px-5 py-4 text-center transition-all duration-700 ease-out",
+          "relative overflow-hidden border-t-2 border-foreground bg-white px-5 py-4 text-center transition-all duration-700 ease-out",
             introState === "hidden"
               ? "translate-y-0 opacity-100"
               : "translate-y-6 opacity-0",
